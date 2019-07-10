@@ -1,0 +1,26 @@
+wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
+git clone https://github.com/WiFiCloneHF/subdomainchecker.git
+cat ~/subdomainchecker/export.txt ~/.bashrc >> ~/.bashrc
+
+source ~/.bashrc
+
+
+go get github.com/Ice3man543/SubOver
+cd ~/go-workspace/src/github.com/Ice3man543/SubOver/
+git clone https://github.com/aboul3la/Sublist3r.git
+python ~/go-workspace/src/github.com/Ice3man543/SubOver/Sublist3r/sublist3r.py -d twitch.tv -o subdomains.txt 
+go run subover.go -l subdomains.txt
+
+
+go get github.com/Ice3man543/SubOver
+cd ~/go-workspace/src/github.com/Ice3man543/SubOver/
+git clone https://github.com/TheRook/subbrute.git
+cd subbrute
+./subbrute website.com -o ~/subdomains.txt
+cd ..
+go run subover.go -l ~/subdomains.txt
+
+
+
+>> Don't run this file or anything lmao
