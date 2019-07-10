@@ -5,19 +5,19 @@ cat ~/subdomainchecker/export.txt ~/.bashrc >> ~/.bashrc
 
 source ~/.bashrc
 
-
+#Sublist3r method
 go get github.com/Ice3man543/SubOver
 cd ~/go-workspace/src/github.com/Ice3man543/SubOver/
 git clone https://github.com/aboul3la/Sublist3r.git
 python ~/go-workspace/src/github.com/Ice3man543/SubOver/Sublist3r/sublist3r.py -d twitch.tv -o subdomains.txt 
 go run subover.go -l subdomains.txt
 
-
+#Subbrute method
 go get github.com/Ice3man543/SubOver
 cd ~/go-workspace/src/github.com/Ice3man543/SubOver/
 git clone https://github.com/TheRook/subbrute.git
 cd subbrute
-./subbrute website.com -o ~/subdomains.txt
+./subbrute.py website.com -o ~/subdomains.txt
 cd ..
 go run subover.go -l ~/subdomains.txt
 
