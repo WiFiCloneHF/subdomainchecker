@@ -1,0 +1,3 @@
+export GOPATH=/root/go-workspace
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
